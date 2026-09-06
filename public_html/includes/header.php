@@ -40,4 +40,3 @@ $canonical = SITE_URL . current_path();
 </header>
 
 <main id="main">
-</main>
