@@ -23,3 +23,10 @@ const VALUE_ANCHOR = 14999;          // INR, "value" reference figure
 const VALUE_ANCHOR_JUSTIFIED = false;
 
 const CURRENCY_CODE = 'INR';
+
+/**
+ * BLOCKER: SuperProfile checkout URL/link for this product.
+ * Leave empty until confirmed — the checkout page shows a pending
+ * notice instead of a broken/guessed link when this is unset.
+ */
+const SUPERPROFILE_CHECKOUT_URL = '';

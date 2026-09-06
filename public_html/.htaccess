@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Clean URLs: /faq -> /pages/faq.php (only when no real file/dir matches)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/pages/$1.php -f
+RewriteRule ^([a-z0-9-]+)/?$ pages/$1.php [L,QSA]
+
+ErrorDocument 404 /404.php
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+php_flag display_errors off

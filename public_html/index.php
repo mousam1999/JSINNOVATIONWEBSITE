@@ -5,6 +5,7 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/includes/tracking.php';
 require_once __DIR__ . '/includes/render-helpers.php';
+require_once __DIR__ . '/includes/faq-data.php';
 
 capture_attribution();
 
@@ -248,30 +249,9 @@ include __DIR__ . '/includes/header.php';
   <div class="container" style="max-width:760px;">
     <h2 class="text-center">Frequently Asked Questions</h2>
     <div>
-      <?php
-      $faqs = [
-          ['q' => 'What exactly is included in the Photography Creative Vault?', 'a' => 'A large collection of album PSDs, Lightroom presets, Photoshop resources, colour LUTs, templates, PNG assets and bonus content. See the "What\'s Included" section above for the full list.'],
-          ['q' => 'How will I receive the pack?', 'a' => 'After a verified purchase, you\'ll be directed to our <a href="/delivery">delivery page</a> with access instructions.'],
-          ['q' => 'How much data is included?', 'a' => 'The vault currently contains 18,000+ digital files and approximately 200GB+ of photography resources.'],
-          ['q' => 'What type of PSDs are included?', 'a' => 'Primarily album design PSDs (10,000+), covering covers, spreads and layouts.'],
-          ['q' => 'Are the files editable/customizable?', 'a' => 'Many resources are provided in editable formats, but editability varies by individual file.'],
-          ['q' => 'Which software do I need?', 'a' => 'Primarily Adobe Photoshop and Adobe Lightroom. Software requirements vary by individual resource — see our Software Compatibility section.'],
-          ['q' => 'Can I use these resources for my photography business?', 'a' => 'Final licensing terms for business use are pending verification. See our <a href="/licensing">licensing page</a> for the current status.'],
-          ['q' => 'Can I use them for client projects?', 'a' => 'Final licensing terms for client use are pending verification. See our <a href="/licensing">licensing page</a> for the current status.'],
-          ['q' => 'Is this suitable for beginners?', 'a' => 'The vault is usable by photographers and editors at various experience levels, though some resources assume basic familiarity with Photoshop or Lightroom.'],
-          ['q' => 'Is this a physical product?', 'a' => 'No. This is a digital product. Nothing will be physically shipped.'],
-          ['q' => 'How large is the download?', 'a' => 'Approximately 200GB+ in total. See our <a href="/delivery">delivery page</a> for how access is structured.'],
-          ['q' => 'Can I share or resell the files?', 'a' => 'Sharing and resale terms are pending final license verification. See our <a href="/licensing">licensing page</a> for the current status.'],
-          ['q' => 'Do I receive future updates?', 'a' => 'Update policy details will be published on this page once confirmed.'],
-          ['q' => 'What if I have trouble accessing my files?', 'a' => 'Contact us at <a href="mailto:' . SUPPORT_EMAIL . '">' . SUPPORT_EMAIL . '</a> and we\'ll help you regain access.'],
-          ['q' => 'What is the refund policy?', 'a' => 'See our <a href="/refund-policy">refund policy</a> for full terms.'],
-          ['q' => 'Why is this bundle priced so low?', 'a' => 'This is a digital product with no per-unit shipping or manufacturing cost, which allows for a lower price relative to the size of the collection.'],
-          ['q' => 'How was the collection curated?', 'a' => 'The collection has been reviewed and organized with AI assistance to help structure the library and make it easier to navigate.'],
-      ];
-      foreach ($faqs as $i => $faq) {
-          echo faq_item($faq, $i);
-      }
-      ?>
+      <?php foreach (get_faqs() as $i => $faq): ?>
+        <?= faq_item($faq, $i) ?>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
