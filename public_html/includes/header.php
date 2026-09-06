@@ -2,6 +2,7 @@
 declare(strict_types=1);
 /** @var string $pageTitle */
 /** @var string $pageDescription */
+capture_attribution();
 $pageTitle = $pageTitle ?? PRODUCT_NAME . ' | ' . SITE_NAME;
 $pageDescription = $pageDescription ?? '18,000+ photography resources and 200GB+ of digital assets including album PSDs, Lightroom resources, Photoshop tools, templates and more.';
 $canonical = SITE_URL . current_path();

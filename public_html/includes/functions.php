@@ -44,3 +44,13 @@ function current_path(): string
 {
     return parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 }
+
+/** Append this session's captured attribution params to an outbound URL, if any were captured. */
+function with_attribution(string $url): string
+{
+    if (empty($_SESSION['attribution']) || $url === '') {
+        return $url;
+    }
+    $separator = str_contains($url, '?') ? '&' : '?';
+    return $url . $separator . http_build_query($_SESSION['attribution']);
+}

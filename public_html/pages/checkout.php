@@ -5,8 +5,6 @@ require_once __DIR__ . '/../includes/config.php';
 require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../includes/tracking.php';
 
-capture_attribution();
-
 $pageTitle = 'Checkout | ' . SITE_NAME;
 $pageDescription = 'Complete your purchase of the Ultimate Photography Creative Vault.';
 $pixelEvent = 'InitiateCheckout';
@@ -21,7 +19,8 @@ include __DIR__ . '/../includes/header.php';
     <p><?= e(PRODUCT_NAME) ?> &mdash; &#8377;<?= number_format(PRODUCT_PRICE) ?> (one-time payment)</p>
 
     <?php if (SUPERPROFILE_CHECKOUT_URL !== ''): ?>
-      <p><a href="<?= e(SUPERPROFILE_CHECKOUT_URL) ?>" class="btn btn--primary" data-cta="checkout-redirect">Continue to Secure Checkout</a></p>
+      <?php // Appends captured UTM/click-id params; whether SuperProfile's checkout preserves or ignores unknown query params is unconfirmed (blocker). ?>
+      <p><a href="<?= e(with_attribution(SUPERPROFILE_CHECKOUT_URL)) ?>" class="btn btn--primary" data-cta="checkout-redirect">Continue to Secure Checkout</a></p>
     <?php else: ?>
       <div class="card" role="alert">
         <p><strong>Checkout is not yet connected.</strong></p>
