@@ -26,7 +26,7 @@ $canonical = SITE_URL . current_path();
 <link rel="stylesheet" href="/assets/css/components.css">
 </head>
 <body>
-<?php render_meta_pixel($pixelEvent ?? null, $pixelEventParams ?? []); ?>
+<?php render_tracking($pixelEvent ?? null, $pixelEventParams ?? []); ?>
 
 <div class="announcement-bar">THE ULTIMATE PHOTOGRAPHY CREATIVE VAULT</div>
 

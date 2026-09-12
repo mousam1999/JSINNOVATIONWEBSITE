@@ -19,6 +19,10 @@ const SMTP_FROM = 'support@jsinnovation.in';
 const META_PIXEL_ID = '';
 const META_CAPI_ACCESS_TOKEN = '';
 
+// Google Analytics 4 measurement ID (e.g. "G-XXXXXXXXXX"). Client-side only, not secret,
+// but kept alongside the other tracking IDs for a single config location.
+const GA4_MEASUREMENT_ID = '';
+
 // SuperProfile — BLOCKER: fields unknown until official docs/API are confirmed.
 // Do not invent keys here beyond what is documented.
 const SUPERPROFILE_WEBHOOK_SECRET = '';
