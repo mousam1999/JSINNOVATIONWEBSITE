@@ -16,6 +16,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="card" role="note">
       <p><strong>Placeholder — requires owner input.</strong> This page must be completed with your actual business details (legal entity name, registered address, data controller contact), the specific tracking technologies in use (Meta Pixel, Meta Conversions API, Google Analytics 4), what data each collects, retention periods, and any applicable regulatory basis (e.g. India's DPDP Act) before this site goes live.</p>
     </div>
+    <p>In the meantime: this site shows a cookie consent banner on first visit and does not load Google Analytics or Meta Pixel until you choose "Accept." Choosing "Reject" (or ignoring the banner) means neither loads.</p>
     <h2>What this page will cover</h2>
     <ul>
       <li>What personal data is collected (e.g. name, email, payment metadata via our payment partner)</li>

@@ -16,6 +16,7 @@
   </div>
 </footer>
 
+<?php include __DIR__ . '/cookie-banner.php'; ?>
 <?php include __DIR__ . '/sticky-cta.php'; ?>
 
 <script src="/assets/js/main.js" defer></script>

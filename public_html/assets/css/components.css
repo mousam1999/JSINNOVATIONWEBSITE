@@ -70,6 +70,35 @@
   .site-footer { padding-bottom: var(--space-4); }
 }
 
+/* Cookie consent banner */
+.cookie-banner {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: 64px; /* stay clear of the mobile sticky CTA below it */
+  z-index: 60;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+  padding: var(--space-2);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner__row {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: space-between;
+}
+.cookie-banner p { margin: 0; font-size: 0.85rem; flex: 1 1 260px; }
+.cookie-banner__actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.cookie-banner .btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+
+@media (min-width: 1024px) {
+  .cookie-banner { bottom: 0; }
+}
+
 /* FAQ accordion */
 .faq-item { border-bottom: 1px solid var(--border); }
 .faq-item__question {
